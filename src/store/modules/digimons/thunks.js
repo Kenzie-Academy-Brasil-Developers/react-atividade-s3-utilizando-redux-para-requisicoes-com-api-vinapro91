@@ -8,15 +8,9 @@ const addDigimonsThunk = (digimon, setError) => (dispatch, getState) => {
   const { digimons } = getState();
   console.log(digimons);
   axios
-    .get("https://digimon-api.vercel.app/api/digimon")
-    .then((response) =>
-      dispatch(
-        addDigimon([
-          ...digimons,
-          ...response.data.filter((item) => item.name === digimon),
-        ])
-      )
-    );
+    .get(`https://digimon-api.vercel.app/api/digimon/name/${digimon}`)
+    .then((response) => dispatch(addDigimon([...digimons, ...response.data])))
+    .catch(() => setError(true));
 };
 
 export default addDigimonsThunk;
