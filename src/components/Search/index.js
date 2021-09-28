@@ -9,7 +9,7 @@ const Search = () => {
   const HandleSearch = () => {
     dispatch(addDigimonsThunk(input, setError));
   };
-  console.log(error);
+
   return (
     <div>
       <h2>Procure pelo seu Digimon!</h2>

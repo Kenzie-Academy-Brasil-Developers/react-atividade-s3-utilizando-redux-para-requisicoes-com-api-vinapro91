@@ -5,8 +5,8 @@ const Digimons = () => {
   return (
     <div>
       <ul>
-        {digimons.map((item) => (
-          <li>
+        {digimons.map((item, indice) => (
+          <li key={indice}>
             {item.name}
             <img alt={item.name} src={item.img} />
           </li>

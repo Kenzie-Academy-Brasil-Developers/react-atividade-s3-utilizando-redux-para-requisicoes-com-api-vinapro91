@@ -13,10 +13,10 @@ const Teste = () => {
   return (
     <>
       <div>
-        {digimon.map((item) => (
-          <li>
+        {digimon.map((item, indice) => (
+          <li key={indice}>
             {item.name}
-            <img src={item.img} />
+            <img alt={item.name} src={item.img} />
             {item.level}
           </li>
         ))}
